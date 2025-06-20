@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Random Quote Generator</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </header>
+        
+        <div class="controls">
+            <select id="category-select" class="category-select">
+                <option value="all">All Categories</option>
+                <option value="motivation">Motivation</option>
+                <option value="life">Life</option>
+                <option value="success">Success</option>
+                <option value="wisdom">Wisdom</option>
+            </select>
+            
+            <button id="history-toggle" class="history-btn">
+                Show History
+            </button>
+        </div>
+        
+        <main class="quote-container">
+            <div class="quote-box">
+                <p id="quote-text">Click the button to get an inspiring quote!</p>
+                <p id="quote-author"></p>
+                <p id="quote-category"></p>
+            </div>
+            
+            <button id="new-quote-btn" class="quote-btn">
+                Get New Quote
+            </button>
+        </main>
+        
+        <div id="history-section" class="history-section hidden">
+            <h3>Quote History</h3>
+            <div id="history-list" class="history-list"></div>
+            <button id="clear-history" class="clear-history-btn">Clear History</button>
+        </div>
+        
+        <footer>
+            <p>Inspiring quotes to brighten your day</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
