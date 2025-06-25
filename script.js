@@ -11,6 +11,21 @@ const quotes = [
         category: "life"
     },
     {
+        text: "The only way to do great work is to love what you do.",
+        author: "Steve Jobs",
+        category: "success"
+    },
+    {
+        text: "Life is what happens to you while you're busy making other plans.",  
+        author: "John Lennon",
+        category: "life"
+    },
+    {
+        text: "The only way to do great work is to love what you do.",
+        author: "Steve Jobs",
+        category: "success"
+    },
+    {
         text: "The future belongs to those who believe in the beauty of their dreams.",
         author: "Eleanor Roosevelt",
         category: "motivation"
