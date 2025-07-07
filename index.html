@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <title>Quote Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Random Quote Generator</h1>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <h1>Quotes</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
         </header>
         
         <div class="controls">
@@ -23,31 +28,27 @@
             </select>
             
             <button id="history-toggle" class="history-btn">
-                Show History
+                History
             </button>
         </div>
         
         <main class="quote-container">
             <div class="quote-box">
-                <p id="quote-text">Click the button to get an inspiring quote!</p>
-                <p id="quote-author"></p>
-                <p id="quote-category"></p>
+                <blockquote id="quote-text">Click the button to get an inspiring quote!</blockquote>
+                <cite id="quote-author"></cite>
+                <span id="quote-category"></span>
             </div>
             
             <button id="new-quote-btn" class="quote-btn">
-                Get New Quote
+                New Quote
             </button>
         </main>
         
         <div id="history-section" class="history-section hidden">
-            <h3>Quote History</h3>
+            <h3>Recent Quotes</h3>
             <div id="history-list" class="history-list"></div>
             <button id="clear-history" class="clear-history-btn">Clear History</button>
         </div>
-        
-        <footer>
-            <p>Inspiring quotes to brighten your day</p>
-        </footer>
     </div>
     
     <script src="script.js"></script>

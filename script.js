@@ -138,12 +138,13 @@ let isDarkTheme = localStorage.getItem('theme') === 'dark';
 
 // Initialize theme
 function initializeTheme() {
+    const themeIcon = themeToggle.querySelector('.theme-icon');
     if (isDarkTheme) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.textContent = '☀️';
+        themeIcon.textContent = '☀️';
     } else {
         document.documentElement.removeAttribute('data-theme');
-        themeToggle.textContent = '🌙';
+        themeIcon.textContent = '🌙';
     }
 }
 
@@ -216,8 +217,8 @@ function updateHistoryDisplay() {
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
         historyItem.innerHTML = `
-            <div class="history-item-text">"${quote.text}"</div>
-            <div class="history-item-author">— ${quote.author} | ${quote.category.charAt(0).toUpperCase() + quote.category.slice(1)}</div>
+            <div class="history-item-text">${quote.text}</div>
+            <div class="history-item-author">${quote.author} • ${quote.category.charAt(0).toUpperCase() + quote.category.slice(1)}</div>
         `;
         
         // Click to display this quote
@@ -235,8 +236,8 @@ function displaySpecificQuote(quote) {
     quoteBox.classList.remove('fade-in');
     
     setTimeout(() => {
-        quoteText.textContent = `"${quote.text}"`;
-        quoteAuthor.textContent = `— ${quote.author}`;
+        quoteText.textContent = quote.text;
+        quoteAuthor.textContent = quote.author;
         quoteCategory.textContent = quote.category.charAt(0).toUpperCase() + quote.category.slice(1);
         quoteBox.classList.add('fade-in');
     }, 50);
@@ -258,8 +259,8 @@ function displayQuote() {
     
     // Small delay to ensure the animation class is removed
     setTimeout(() => {
-        quoteText.textContent = `"${quote.text}"`;
-        quoteAuthor.textContent = `— ${quote.author}`;
+        quoteText.textContent = quote.text;
+        quoteAuthor.textContent = quote.author;
         quoteCategory.textContent = quote.category.charAt(0).toUpperCase() + quote.category.slice(1);
         quoteBox.classList.add('fade-in');
         
@@ -279,7 +280,7 @@ function handleCategoryChange() {
 function toggleHistorySection() {
     historySection.classList.toggle('hidden');
     historyToggle.textContent = historySection.classList.contains('hidden') 
-        ? 'Show History' 
+        ? 'History' 
         : 'Hide History';
 }
 
